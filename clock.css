@@ -1,0 +1,115 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    font-family: Gotham Rounded,sans-serif;
+}
+
+body{
+    background: linear-gradient(to right,#270c70,#c906c9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.clock {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255,255,255,.7);
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+}
+
+.clock .no{
+    --rotate:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotate));
+    font-size: 1.5rem;
+}
+
+.clock .no1 {--rotate:30deg;}
+.clock .no2 {--rotate:60deg;}
+.clock .no3 {--rotate:90deg;}
+.clock .no4 {--rotate:120deg;}
+.clock .no5 {--rotate:150deg;}
+.clock .no6 {--rotate:180deg;}
+.clock .no7 {--rotate:210deg;}
+.clock .no8 {--rotate:240deg;}
+.clock .no9 {--rotate:270deg;}
+.clock .no10 {--rotate:300deg;}
+.clock .no11{--rotate:330deg;}
+
+.clock::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+
+.clock .ha{
+    --rotate:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: black;
+    transform-origin: bottom;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotate) * 1deg));
+}
+
+.clock .ha.se {
+    width: 3px;
+    height: 45%;
+    background-color: red;
+}
+
+.clock .ha.hr{
+    width: 10px;
+    height: 35%;
+    background-color: black;
+}
+
+.clock .ha.mi {
+    width: 7px;
+    height: 40%;
+    background-color:black;
+} 
+
+.digi
+{
+    width: 120px;
+    height: 40px;
+    background-color: chartreuse;
+    color: black;
+    margin: 2px 10px;
+    border: 2px solid black;
+    border-style: outset;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+
+#ti
+{
+    color: black;
+    font-family: monospace sans-serif;
+}
+
+.digi:hover{
+    background-color: rgb(224, 59, 197);
+    border-radius: 10px;
+    border: 2px solid rgb(20, 5, 75);
+    
+}
